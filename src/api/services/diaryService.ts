@@ -8,6 +8,7 @@ export const getDiaries = (): DiaryEntry[] => {
   console.log(diaries)
   return diaries
 }
+
 export const getNonSensitiveDiaries = (): NonSensitiveDiaryEntry[] => {
   return diaries.map(({ id, date, weather, visibility }) => {
     return {

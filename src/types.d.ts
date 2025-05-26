@@ -13,8 +13,30 @@ export type NonSensitiveDiaryEntry = Omit<DiaryEntry, 'comment'> // Pick<DiaryEn
 
 export type NewDiaryEntry = Omit<DiaryEntry, 'id'> // Pick<DiaryEntry, 'date' | 'weather' | 'visibility' | 'comment'>
 
-interface BusInfo {
+interface TrackingBusInfo {
   line: string
   route: string
-  minutes: string
+  minutes: number
+}
+interface TrackingStopInfo {
+  site: string
+  id: number
+  hour: string
+}
+
+interface TrackingActualStopInfo extends TrackingStopInfo {
+  lines: string[]
+  totalIncomingBuses: number
+  incomingBuses: TrackingBusInfo[]
+}
+
+type TrackingActualStopInfoNoLines = Omit<TrackingActualStopInfo, 'lines'>
+
+interface StopInfo {
+  lineas: string
+  nombre: string
+  id: number
+  stop_id: string
+  lon: number
+  lat: number
 }
