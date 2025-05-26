@@ -2,7 +2,6 @@ import express from 'express'
 
 import busesRouter from './api/routes/buses'
 import diaryRouter from './api/routes/diaries'
-import scrapeBuses from './busScrapping/busScrapping'
 
 /*
 scrapeBuses(8700).then(info => { // Comercio: 8460 Peritos: 14227 CUVI-EEI: 8700
